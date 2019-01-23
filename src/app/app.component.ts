@@ -13,12 +13,12 @@ export class AppComponent {
 
     //Function to get boat orientation
     boatOrientation() {
-        let orientation = 0;
+        let orientation;
         let random = Math.round(Math.random());
         if (random === 0) {
-            orientation = gameConstants.ORIENTATION_TO_LEFT_AND_RIGHT;
-        } else {
             orientation = gameConstants.ORIENTATION_TO_UP_AND_DOWN;
+        } else {
+            orientation = gameConstants.ORIENTATION_TO_LEFT_AND_RIGHT;
         }
         return orientation;
     }
@@ -32,9 +32,38 @@ export class AppComponent {
 
 //Function to get boat direction
     boatDirection(orientation) {
-        let direction =0;
-        if (orientation === gameConstants.ORIENTATION_TO_UP_AND_DOWN) {
-            direction
+        let direction;
+        if (orientation===gameConstants.ORIENTATION_TO_UP_AND_DOWN){
+          let random = Math.round(Math.random());
+            if (random === 0) {
+                direction = gameConstants.DIRECTION_TO_UP;
+            } else {
+                direction=gameConstants.DIRECTION_TO_DOWN;
+            }
+        }
+        else if (orientation===gameConstants.ORIENTATION_TO_LEFT_AND_RIGHT){
+            let random = Math.round(Math.random());
+            if (random === 0) {
+                direction = gameConstants.DIRECTION_TO_RIGHT;
+            } else {
+                direction=gameConstants.DIRECTION_TO_LEFT;
+            }
+        }
+        return direction;
+    }
+
+    //Function to check movement
+    checkMovement(cell,direction,nPieces){
+        let movement =undefined;
+        if (direction===gameConstants.DIRECTION_TO_UP){
+            for (let i=nPieces; i<=0; i--){
+                if (cell-10<0){
+                    movement=false;
+                } else {
+
+                }
+            }
+            if ()
         }
     }
 }
