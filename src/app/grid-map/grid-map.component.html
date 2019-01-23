@@ -1,4 +1,6 @@
 <button (click)="createPuzzleLayout()" class="button">{{buttonText}}</button>
-<div id="tablegrid">
-
-</div>
+<table>
+  <tr *ngFor="let row of top">
+    <td *ngFor="let column of top" [style.background-color]="{{}}"></td>
+  </tr>
+</table>

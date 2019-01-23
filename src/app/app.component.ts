@@ -11,7 +11,7 @@ export class AppComponent {
     title = 'hundirLaFlota';
 
 
-    //Function to get boat orientation
+    // Function to get boat orientation
     boatOrientation() {
         let orientation = 0;
         let random = Math.round(Math.random());
@@ -23,20 +23,25 @@ export class AppComponent {
         return orientation;
     }
 
-//Funciton to get boat position
+    // Funciton to get boat position
     boatPosition() {
         let position = Math.round(Math.random() * 24);
         let cell = document.getElementById('piece' + position);
         return cell;
     }
 
-//Function to get boat direction
+    // Function to get boat direction
     boatDirection(orientation) {
         let direction =0;
         if (orientation === gameConstants.ORIENTATION_TO_UP_AND_DOWN) {
             direction
         }
     }
+    // Function to paint the boat
+      boatprint(position, imgUrl){
+
+      }
 }
+
 
 

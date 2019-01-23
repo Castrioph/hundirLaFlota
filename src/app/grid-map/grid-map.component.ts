@@ -14,6 +14,15 @@ export class GridMapComponent implements OnInit {
   }
   title: string = 'Hundir la flota';
   buttonText: string='tabla';
+
+  // General vars
+  top: number=5;
+
+
+
+
+
+
    createPuzzleLayout( ){
     let numeroPiezas=25;
     let raiz= Math.sqrt(numeroPiezas);
