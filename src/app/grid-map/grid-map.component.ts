@@ -12,11 +12,14 @@ export class GridMapComponent implements OnInit {
 
   ngOnInit() {
   }
+
   title: string = 'Hundir la flota';
-  buttonText: string='tabla';
+
+  buttonText: string='Iniciar juego';
 
   // General vars
   top: number=5;
+
 
 
 
