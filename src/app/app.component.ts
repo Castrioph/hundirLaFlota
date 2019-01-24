@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {gameConstants} from './constants/gameConstants';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +9,11 @@ import {gameConstants} from './constants/gameConstants';
 })
 
 export class AppComponent {
-  title = 'hundirLaFlota';
+
+    title = 'hundirLaFlota';
+    grid: boolean = false;
+    buttonText: string = 'Iniciar juego';
+
 
 
   // Function to get boat orientation
@@ -30,26 +35,28 @@ export class AppComponent {
     return cell;
   }
 
-  // Function to get boat direction
-  boatDirection(orientation) {
-    let direction;
-    if (orientation === gameConstants.ORIENTATION_TO_UP_AND_DOWN) {
-      let random = Math.round(Math.random());
-      if (random === 0) {
-        direction = gameConstants.DIRECTION_TO_UP;
-      } else {
-        direction = gameConstants.DIRECTION_TO_DOWN;
-      }
-    } else if (orientation === gameConstants.ORIENTATION_TO_LEFT_AND_RIGHT) {
-      let random = Math.round(Math.random());
-      if (random === 0) {
-        direction = gameConstants.DIRECTION_TO_RIGHT;
-      } else {
-        direction = gameConstants.DIRECTION_TO_LEFT;
-      }
+
+    // Function to get boat direction
+    boatDirection(orientation) {
+        let direction;
+        if (orientation === gameConstants.ORIENTATION_TO_UP_AND_DOWN) {
+            let random = Math.round(Math.random());
+            if (random === 0) {
+                direction = gameConstants.DIRECTION_TO_UP;
+            } else {
+                direction = gameConstants.DIRECTION_TO_DOWN;
+            }
+        } else if (orientation === gameConstants.ORIENTATION_TO_LEFT_AND_RIGHT) {
+            let random = Math.round(Math.random());
+            if (random === 0) {
+                direction = gameConstants.DIRECTION_TO_RIGHT;
+            } else {
+                direction = gameConstants.DIRECTION_TO_LEFT;
+            }
+        }
+        return direction;
     }
-    return direction;
-  }
+  
 
   //Function to check movement
   checkMovement(cell, direction, nPieces, arrayBarquitos) {
@@ -69,22 +76,22 @@ export class AppComponent {
                   return false;
                 } else if (arrayBarquitos.include(cell)) {
                   return false;
+
+
                 } else {
                   cell = cell + 5;
                 }
-      } else if (direction === gameConstants.DIRECTION_TO_RIGHT) {
+      }
+     } else if (direction === gameConstants.DIRECTION_TO_RIGHT) {
           if (cell + 2 > 24) {
             return false;
           } else {
             return true;
           }
         }
-
-
-}
-}
-}
-
+      }
+    }
+       
 
 
 
