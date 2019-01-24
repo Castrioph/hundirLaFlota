@@ -1,8 +1,7 @@
-<button (click)="createPuzzleLayout()" class="button">{{buttonText}}</button>
-<table>
+<table class="table table-bordered">
   <tr *ngFor="let row of top; let i=index">
-    <td *ngFor="let column of top; let j=index" [style.background-color]=" fieldColor " width="50" height="50"
-        [id]="i*5+j">
+    <td *ngFor="let column of top; let j=index" [style.background-color]=" fieldColor " width="100" height="100" border="1px"
+        [id]="'cell'+(i*5+j)">
     </td>
   </tr>
 </table>

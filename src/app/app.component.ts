@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {gameConstants} from './constants/gameConstants';
 
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -9,6 +10,8 @@ import {gameConstants} from './constants/gameConstants';
 
 export class AppComponent {
     title = 'hundirLaFlota';
+    grid: boolean = false;
+    buttonText: string = 'Iniciar juego';
 
 
     // Function to get boat orientation
@@ -33,43 +36,43 @@ export class AppComponent {
     // Function to get boat direction
     boatDirection(orientation) {
         let direction;
-        if (orientation===gameConstants.ORIENTATION_TO_UP_AND_DOWN){
-          let random = Math.round(Math.random());
+        if (orientation === gameConstants.ORIENTATION_TO_UP_AND_DOWN) {
+            let random = Math.round(Math.random());
             if (random === 0) {
                 direction = gameConstants.DIRECTION_TO_UP;
             } else {
-                direction=gameConstants.DIRECTION_TO_DOWN;
+                direction = gameConstants.DIRECTION_TO_DOWN;
             }
-        }
-        else if (orientation===gameConstants.ORIENTATION_TO_LEFT_AND_RIGHT){
+        } else if (orientation === gameConstants.ORIENTATION_TO_LEFT_AND_RIGHT) {
             let random = Math.round(Math.random());
             if (random === 0) {
                 direction = gameConstants.DIRECTION_TO_RIGHT;
             } else {
-                direction=gameConstants.DIRECTION_TO_LEFT;
+                direction = gameConstants.DIRECTION_TO_LEFT;
             }
         }
         return direction;
     }
 
     //Function to check movement
-    checkMovement(cell,direction,nPieces){
-        let movement =undefined;
-        if (direction===gameConstants.DIRECTION_TO_UP){
-            for (let i=nPieces; i<=0; i--){
-                if (cell-10<0){
-                    movement=false;
+    checkMovement(cell, direction, nPieces) {
+        let movement = undefined;
+        if (direction === gameConstants.DIRECTION_TO_UP) {
+            for (let i = nPieces; i <= 0; i--) {
+                if (cell - 10 < 0) {
+                    movement = false;
                 } else {
 
                 }
             }
-            if ()
+            //TODO: if ()
         }
     }
-    // Function to paint the boat
-      boatprint(position, imgUrl){
 
-      }
+    // Function to paint the boat
+    boatprint(position, imgUrl) {
+
+    }
 }
 
 
