@@ -33,8 +33,8 @@ export class AppComponent {
         let position = Math.round(Math.random() * 24);
         let cell = document.getElementById('cell ' + position);
         return cell;
-    }     
-    
+    }
+
 
     // Function to get boat direction
     boatDirection(orientation) {
@@ -71,7 +71,7 @@ export class AppComponent {
                 } else {
                     auxiliarBarquitos.push(cell);
                     cell = cell - 5;
-                    
+
                 }
             }
             arrayBarquitos.contact(auxiliarBarquitos);
@@ -98,12 +98,12 @@ export class AppComponent {
                     return false;
                 } else if (arrayBarquitos.include(cell)) {
                     return false;
-    
+
                 } else {
                     auxiliarBarquitos.push(cell);
                     cell = cell + 1;
                 }
-                
+
             }
             arrayBarquitos.contact(auxiliarBarquitos);
             return arrayBarquitos;
@@ -114,25 +114,18 @@ export class AppComponent {
                     return false;
                 } else if (arrayBarquitos.include(cell)) {
                     return false;
-    
+
                 } else {
                     auxiliarBarquitos.push(cell);
                     cell = cell - 1;
                 }
-                
+
             }
             arrayBarquitos.contact(auxiliarBarquitos);
             return arrayBarquitos;
         }
-<<<<<<< HEAD
-    } 
-=======
     }
-
-    
->>>>>>> bb1d7957a4dec7317ca1a689dbb3450d1c8d5c6e
 }
-
 
        
 
