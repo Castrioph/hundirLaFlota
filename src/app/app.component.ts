@@ -33,8 +33,8 @@ export class AppComponent {
         let position = Math.round(Math.random() * 24);
         let cell = document.getElementById('cell ' + position);
         return cell;
-    }
-
+    }     
+    
 
     // Function to get boat direction
     boatDirection(orientation) {
@@ -61,6 +61,7 @@ export class AppComponent {
     //Function to check movement
     checkMovement(cell, direction, nPieces, arrayBarquitos) {
         let row = 0;
+        let auxiliarBarquitos = [];
         if (direction === gameConstants.DIRECTION_TO_UP) {
             for (let i = nPieces; i <= 0; i--) {
                 if ((cell - 5) < 0) {
@@ -68,10 +69,13 @@ export class AppComponent {
                 } else if (arrayBarquitos.include(cell)) {
                     return false;
                 } else {
+                    auxiliarBarquitos.push(cell);
                     cell = cell - 5;
+                    
                 }
             }
-            return true;
+            arrayBarquitos.contact(auxiliarBarquitos);
+            return arrayBarquitos;
         } else if (direction === gameConstants.DIRECTION_TO_DOWN) {
             for (let i = nPieces; i <= 0; i--) {
                 if ((cell + 5) > 24) {
@@ -81,29 +85,46 @@ export class AppComponent {
 
 
                 } else {
+                    auxiliarBarquitos.push(cell);
                     cell = cell + 5;
                 }
             }
-            return true;
+            arrayBarquitos.contact(auxiliarBarquitos);
+            return arrayBarquitos;
         } else if (direction === gameConstants.DIRECTION_TO_RIGHT) {
             row = cell / 5;
-            if (cell + (nPieces - 1) / 5 > row) {
-                return false;
-            } else if (arrayBarquitos.include(cell)) {
-                return false;
-
-            } else {
-                return true;
+            for (let i = nPieces; i <= 0; i--) {
+                if (cell + (nPieces - 1) / 5 != row) {
+                    return false;
+                } else if (arrayBarquitos.include(cell)) {
+                    return false;
+    
+                } else {
+                    auxiliarBarquitos.push(cell);
+                    cell = cell + 1;
+                }
+                
             }
+            arrayBarquitos.contact(auxiliarBarquitos);
+            return arrayBarquitos;
         } else if (direction === gameConstants.DIRECTION_TO_LEFT) {
             row = cell / 5;
-            if (cell - (nPieces - 1) / 5 > row) {
-                return false;
+            for (let i = nPieces; i <= 0; i--) {
+                if (cell + (nPieces - 1) / 5 != row) {
+                    return false;
+                } else if (arrayBarquitos.include(cell)) {
+                    return false;
+    
+                } else {
+                    auxiliarBarquitos.push(cell);
+                    cell = cell - 1;
+                }
+                
             }
-        } else {
-            return true;
+            arrayBarquitos.contact(auxiliarBarquitos);
+            return arrayBarquitos;
         }
-    }
+    } 
 }
 
 
