@@ -7,8 +7,12 @@
      <button (click)="grid = true" class="button">{{buttonText}}</button>
   </div>
   <div *ngIf="grid">
-     <div class="col-md-8"><app-grid-map></app-grid-map></div>
-     <div class="col-md-4"><app-grid-ship></app-grid-ship></div>
+     <div class="col-md-6">
+        <app-grid-map></app-grid-map>
+     </div>
+     <div class="col-md-4">
+        <app-grid-ship></app-grid-ship>
+     </div>
   </div>
 </div>
 

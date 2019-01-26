@@ -124,7 +124,13 @@ export class AppComponent {
             arrayBarquitos.contact(auxiliarBarquitos);
             return arrayBarquitos;
         }
+<<<<<<< HEAD
     } 
+=======
+    }
+
+    
+>>>>>>> bb1d7957a4dec7317ca1a689dbb3450d1c8d5c6e
 }
 
 
