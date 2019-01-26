@@ -1,19 +1,27 @@
 <table class="table table-bordered">
     <tr>
-        <td colspan="2" *ngFor="let grid of bigShip" [style.background-color]="'grey'" width="100" height="100"></td>
+        <td colspan="2"  *ngFor="let grid of bigShip" [style.background-color]="'grey'" width="100" height="100"></td>
     </tr>
 </table>
 
-<table class="table table-bordered">
-    <tr>
-        <td  *ngFor="let grid of mediumShip" [style.background-color]="'grey'" width="100" height="100"></td>
-    </tr>
-</table>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-bordered">
+            <tr>
+                <td  *ngFor="let grid of mediumShip" [style.background-color]="'grey'" width="100" height="100"></td>
+            </tr>
+        </table>
+    </div>
+</div>
 
-<div *ngFor ="let times of mediumShip">
-    <table class="table table-bordered" >
-        <tr>
-            <td *ngFor="let grid of smallShip" [style.background-color]="'grey'" width="100" height="100"></td>
-        </tr>
-    </table>
+<div class="row">
+    <div class="col-md-4">
+        <div *ngFor ="let times of mediumShip">
+            <table class="table table-bordered" >
+                <tr>
+                    <td *ngFor="let grid of smallShip" [style.background-color]="'grey'" width="100" height="100"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
