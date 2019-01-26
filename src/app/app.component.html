@@ -4,7 +4,7 @@
    Bienvenido a {{ title }}!
   </h1>
   <div *ngIf="!grid">
-     <button (click)="grid = true" class="button">{{buttonText}}</button>
+     <button (click)="grid = true" (click)="runGame()" class="button">{{buttonText}}</button>
   </div>
   <div *ngIf="grid">
      <div class="col-md-6">
