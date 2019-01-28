@@ -11,7 +11,7 @@ export class GridMapComponent implements OnInit {
 
   // General vars
   top = [1, 2, 3, 4, 5];
-  fieldColor: string = '#12c0ba';
+  fieldColor: string = '#112dc0';
 
 
   constructor() {
