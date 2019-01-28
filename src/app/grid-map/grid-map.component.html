@@ -1,17 +1,31 @@
-<table class="table table-bordered">
-  <tr *ngFor="let row of top; let i=index">
-    <td *ngFor="let column of top; let j=index" [style.background-color]=" fieldColor " width="100" height="100" border="1px"
-        [id]="'cell'+(i*5+j)" (click)="changeColor($event.currentTarget);">
-    </td>
-  </tr>
-</table>
+<div *ngIf="lifes>0">
+    <table class="table table-bordered">
+      <tr *ngFor="let row of top; let i=index">
+        <td *ngFor="let column of top; let j=index" [style.background-color]=" fieldColor " width="100" height="100" border="1px"
+            [id]="'cell'+(i*5+j)" (click)="mapChangeColor($event.currentTarget);">
+        </td>
+      </tr>
+    </table>
 
-<div>
-    1. Haz click sobre uno de los recuadros azules para intentar golpear el barco enemigo.
+    <div>
+        1. Haz click sobre uno de los recuadros azules para intentar golpear el barco enemigo.
+    </div>
+    <div>
+        2. Si golpeas al barco, la casilla se pondrá en rojo.
+    </div>
+    <div>
+        3. Si fallas el golpe, la casilla se pondrá en blanco.
+    </div>
+
+    <div>
+    <h3>Tienes {{lifes}} vidas
+    </h3></div>
 </div>
-<div>
-    2. Si golpeas al barco, la casilla se pondrá en rojo.
+
+<div *ngIf="hits>=7">
+    <h1> Has ganado!</h1>
 </div>
-<div>
-    3. Si fallas el golpe, la casilla se pondrá en blanco.
+
+<div *ngIf="lifes<=0">
+    <h1> Has perdido!</h1>
 </div>

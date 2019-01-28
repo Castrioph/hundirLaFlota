@@ -1,23 +1,25 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-grid-ship',
-  templateUrl: './grid-ship.component.html',
-  styleUrls: ['./grid-ship.component.css']
+    selector: 'app-grid-ship',
+    templateUrl: './grid-ship.component.html',
+    styleUrls: ['./grid-ship.component.css']
 })
 export class GridShipComponent implements OnInit {
 
-  bigShip = [1,2,3];
-  mediumShip = [1,2];
-  smallShip = [1];
-  @Input() arrayBarquitos=[];
-  @Input() currentTarget;
-  constructor() { }
+    @Input() hits;
+    @Input() lifes;
+    bigShip = [1, 2, 3];
+    mediumShip = [1, 2];
+    smallShip = [1];
+    @Input() arrayBarquitos = [];
+    @Input() currentTargetBackground;
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
 
-  changeColor(){
-    console.log('funca');
-  }
+    ngOnInit() {
+    }
+
 }
+

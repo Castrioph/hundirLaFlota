@@ -1,7 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {gameConstants} from './constants/gameConstants';
 import {doesNotThrow} from "assert";
 import {GridMapComponent} from "./grid-map/grid-map.component";
+import {GridShipComponent} from "./grid-ship/grid-ship.component";
 
 
 @Component({
@@ -12,10 +13,14 @@ import {GridMapComponent} from "./grid-map/grid-map.component";
 
 export class AppComponent {
 
+    hits=0;
+    lifes = 10;
     title = 'Hundir la flota';
     grid: boolean = false;
     buttonText: string = 'Iniciar juego';
     arrayBarquitos = [];
+    @Input() currentTargetBackground = ['grey', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey'];
+    @Output() shoot: EventEmitter<any> = new EventEmitter();
 
 
     // Function to get boat orientation
@@ -158,7 +163,7 @@ export class AppComponent {
             }
         }
 
-        for(let i=0; i<2; i++){
+        for (let i = 0; i < 2; i++) {
             prop = false;
             while (!prop) {
                 let act = this.checkMovement(cell, orientation, direction, 1, this.arrayBarquitos);
@@ -173,6 +178,18 @@ export class AppComponent {
         }
         console.log(this.arrayBarquitos);
     }
+
+    onShootMap(item) {
+        let id = item.attributes['id'].value.split('ll');
+        id = parseInt(id[1]);
+        if (this.arrayBarquitos.indexOf(id) != -1) {
+            this.currentTargetBackground[this.arrayBarquitos.indexOf(id)] =
+                '#990e11';
+
+        }
+
+    }
+
 }
 
 

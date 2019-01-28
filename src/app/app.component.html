@@ -8,10 +8,13 @@
   </div>
   <div *ngIf="grid">
      <div class="col-md-6">
-        <app-grid-map [arrayBarquitos]="arrayBarquitos" ></app-grid-map>
+        <app-grid-map [arrayBarquitos]="arrayBarquitos" (shootMap)="onShootMap($event)" [hits]="hits"
+        [lifes]="lifes" (hitted)="hits=hits+1;" (missed)="lifes=lifes-1;"></app-grid-map>
      </div>
+
      <div class="col-md-4">
-        <app-grid-ship [arrayBarquitos]="arrayBarquitos"></app-grid-ship>
+        <app-grid-ship [arrayBarquitos]="arrayBarquitos"
+        [currentTargetBackground]="currentTargetBackground" [hits]="hits" [lifes]="lifes"></app-grid-ship>
      </div>
   </div>
 </div>
