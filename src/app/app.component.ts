@@ -80,7 +80,7 @@ export class AppComponent {
             for (let i = nPieces; i <= 0; i--) {
                 if ((cell + 5) > 24) {
                     return false;
-                } else if (arrayBarquitos.include(cell)) {
+                } else if (arrayBarquitos.includes(cell)) {
                     return false;
 
 
@@ -96,7 +96,7 @@ export class AppComponent {
             for (let i = nPieces; i <= 0; i--) {
                 if (cell + (nPieces - 1) / 5 != row) {
                     return false;
-                } else if (arrayBarquitos.include(cell)) {
+                } else if (arrayBarquitos.includes(cell)) {
                     return false;
     
                 } else {
@@ -112,7 +112,7 @@ export class AppComponent {
             for (let i = nPieces; i <= 0; i--) {
                 if (cell + (nPieces - 1) / 5 != row) {
                     return false;
-                } else if (arrayBarquitos.include(cell)) {
+                } else if (arrayBarquitos.includes(cell)) {
                     return false;
     
                 } else {
@@ -124,13 +124,7 @@ export class AppComponent {
             arrayBarquitos.contact(auxiliarBarquitos);
             return arrayBarquitos;
         }
-<<<<<<< HEAD
-    } 
-=======
     }
-
-    
->>>>>>> bb1d7957a4dec7317ca1a689dbb3450d1c8d5c6e
 }
 
 
