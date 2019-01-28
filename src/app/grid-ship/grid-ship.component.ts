@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-grid-ship',
@@ -10,9 +10,14 @@ export class GridShipComponent implements OnInit {
   bigShip = [1,2,3];
   mediumShip = [1,2];
   smallShip = [1];
+  @Input() arrayBarquitos=[];
+  @Input() currentTarget;
   constructor() { }
 
   ngOnInit() {
   }
 
+  changeColor(){
+    console.log('funca');
+  }
 }

@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {gameConstants} from './constants/gameConstants';
 import {doesNotThrow} from "assert";
+import {GridMapComponent} from "./grid-map/grid-map.component";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {doesNotThrow} from "assert";
 
 export class AppComponent {
 
-    title = 'hundirLaFlota';
+    title = 'Hundir la flota';
     grid: boolean = false;
     buttonText: string = 'Iniciar juego';
     arrayBarquitos = [];
@@ -173,8 +174,5 @@ export class AppComponent {
         console.log(this.arrayBarquitos);
     }
 }
-
-
-
 
 
